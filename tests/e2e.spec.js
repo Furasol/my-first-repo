@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
-import { LoginPage } from "../base/LoginPage";
-import { InventoryPage } from "../base/InventoryPage";
-import { CartPage } from "../base/CartPage";
-import { CheckoutStepOnePage } from "../base/CheckoutStepOnePage";
-import { CheckoutStepTwoPage } from "../base/CheckoutStepTwoPage";
-import { CheckoutCompletePage } from "../base/CheckoutCompletePage";
+import { LoginPage } from "../pages/LoginPage";
+import { InventoryPage } from "../pages/InventoryPage";
+import { CartPage } from "../pages/CartPage";
+import { CheckoutStepOnePage } from "../pages/CheckoutStepOnePage";
+import { CheckoutStepTwoPage } from "../pages/CheckoutStepTwoPage";
+import { CheckoutCompletePage } from "../pages/CheckoutCompletePage";
 
 test("Успешный логин и проверка страницы товаров", async ({ page }) => {
   const loginPage = new LoginPage(page);

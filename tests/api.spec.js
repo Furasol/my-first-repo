@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
-test.describe("API-тесты для Restful-booker", () => {
+test.describe("API-тесты для Restful-booker @api", () => {
   const baseURL = "https://restful-booker.herokuapp.com";
 
   let bookingId;
@@ -18,7 +18,7 @@ test.describe("API-тесты для Restful-booker", () => {
     additionalneeds: "Breakfast",
   };
 
-  test("Создание бронирования (Create - POST)", async ({ request }) => {
+  test("Создание бронирования (Create - POST) @api", async ({ request }) => {
     const responsePost = await request.post(`${baseURL}/booking`, {
       data: postData,
     });
@@ -31,7 +31,7 @@ test.describe("API-тесты для Restful-booker", () => {
     expect(responseBody.booking).toEqual(postData);
   });
 
-  test("Получение информации о бронировании (Read - GET)", async ({
+  test("Получение информации о бронировании (Read - GET) @api", async ({
     request,
   }) => {
     const responseGet = await request.get(`${baseURL}/booking/${bookingId}`);
@@ -40,7 +40,7 @@ test.describe("API-тесты для Restful-booker", () => {
     expect(responseBody).toEqual(postData);
   });
 
-  test("Обновление бронирования (Update - PUT)", async ({ request }) => {
+  test("Обновление бронирования (Update - PUT) @api", async ({ request }) => {
     const putData = {
       username: "admin",
       password: "password123",
@@ -78,7 +78,7 @@ test.describe("API-тесты для Restful-booker", () => {
     expect(responsePutBody).toEqual(updatedData);
   });
 
-  test("Удаление бронирования (Delete - DELETE)", async ({ request }) => {
+  test("Удаление бронирования (Delete - DELETE) @api", async ({ request }) => {
     const responseDelete = await request.delete(
       `${baseURL}/booking/${bookingId}`,
       {
